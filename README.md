@@ -2,8 +2,8 @@
 
 Liens utils:
 
-- [https://ryanlanciaux.com/blog/2017/08/20/a-feature-based-approach-to-react-development/](A feature based approach to React development)
-- [https://jsonplaceholder.typicode.com/](JSON Placeholder API)
+- [A feature based approach to React development](https://ryanlanciaux.com/blog/2017/08/20/a-feature-based-approach-to-react-development)
+- [JSON Placeholder API](https://jsonplaceholder.typicode.com)
 
 ---
 
