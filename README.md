@@ -4,6 +4,13 @@ Liens utils:
 
 - [A feature based approach to React development](https://ryanlanciaux.com/blog/2017/08/20/a-feature-based-approach-to-react-development)
 - [JSON Placeholder API](https://jsonplaceholder.typicode.com)
+- [Material Ui](https://material-ui.com/)
+
+Features:
+
+- [ ] Page listant tous les articles triés par ordre anti-chronologiques
+- [ ] Page pour chaque article
+- [ ] Module de commentaires pour chaque article
 
 ---
 
