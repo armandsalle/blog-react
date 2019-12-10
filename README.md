@@ -1,3 +1,12 @@
+# Blog with ReactJs
+
+Liens utils:
+
+- [https://ryanlanciaux.com/blog/2017/08/20/a-feature-based-approach-to-react-development/](A feature based approach to React development)
+- [https://jsonplaceholder.typicode.com/](JSON Placeholder API)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
