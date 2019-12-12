@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { dateOptions } from "../../../shared/constant/dateOptions"
+import { dateToString } from "../../../shared/utils/dateToString"
 
 const PostItem = ({ item }) => {
   return (
@@ -13,7 +13,7 @@ const PostItem = ({ item }) => {
           <h2>{item.title}</h2>
         </Link>
         <div className="author">
-          {item.author} <span className="date">le {new Date(item.date).toLocaleDateString("fr-CA", dateOptions)}</span>
+          {item.author} <span className="date">le {dateToString(item.date)}</span>
         </div>
         <p className="exerp">{item.exerp + "..."}</p>
       </div>

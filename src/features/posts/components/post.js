@@ -2,7 +2,7 @@ import React from "react"
 import { useSelector } from "react-redux"
 import { Markup } from "interweave"
 import { CommentContainer } from "../../comments"
-import { dateOptions } from "../../../shared/constant/dateOptions"
+import { dateToString } from "../../../shared/utils/dateToString"
 
 const Post = ({ match }) => {
   const id = match.params.post_id
@@ -18,7 +18,7 @@ const Post = ({ match }) => {
         <div className="post-item__content">
           <h2>{data.title}</h2>
           <div className="author">
-            {data.author} <span className="date">le {new Date(data.date).toLocaleDateString("fr-CA", dateOptions)}</span>
+            {data.author} <span className="date">le {dateToString(data.date)}</span>
           </div>
           <div className="content">
             <Markup content={data.body} />

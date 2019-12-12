@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px, 10px/16px = 62.5%
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: black;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+  font-smoothing: subpixel-antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  max-width: 100rem;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  @media only screen and (max-width: 1000px) {
+    padding: 0 1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  height: 10rem;
+  width: 100%;
+  border-bottom: 3px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: -1.2rem;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+  }
+
+  & h1 {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    line-height: 1;
+  }
+}
+
+main {
+  margin-top: 6rem;
+}
+
+.post-item {
+  display: flex;
+  margin-bottom: 4rem;
+
+  &__before {
+    width: 4rem;
+    padding-top: 2.3rem;
+
+    & .circle {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    width: calc(100% - 4rem);
+
+    & h2 {
+      font-size: 5.5rem;
+      line-height: 1;
+      font-weight: bold;
+      @media only screen and (max-width: 1000px) {
+        font-size: 4rem;
+      }
+      @media only screen and (max-width: 500px) {
+        font-size: 4rem;
+      }
+    }
+
+    & .author {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    & .date {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    & .exerp {
+      font-style: italic;
+      font-size: 1.4rem;
+      margin-top: 1.4rem;
+    }
+
+    & .content {
+      margin-top: 1.4rem;
+      font-size: 1.4rem;
+      width: 100%;
+
+      & div > * {
+        margin-bottom: 1rem;
+      }
+
+      & div li {
+        list-style-position: inside;
+      }
+    }
+  }
+}
+
+.comments {
+  margin-left: 4rem;
+  & h3 {
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+
+  &-length {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}
+
+.comment {
+  &-item {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+
+    &__author {
+      font-weight: bold;
+    }
+  }
+
+  &-form {
+    margin-top: 3rem;
+
+    & input {
+      width: 30rem;
+      height: 2.5rem;
+      margin-bottom: 1.5rem;
+
+      padding: 0.5rem;
+      display: block;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+      background-color: transparent;
+
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+      }
+
+      &::placeholder {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.4rem;
+      }
+    }
+
+    & button {
+      border: none;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      padding-left: 0.5rem;
+      background-color: transparent;
+
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 0;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}

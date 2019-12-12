@@ -1,5 +1,6 @@
 import React from "react"
-import { Route, Link } from "react-router-dom"
+import { Route, Link, Switch } from "react-router-dom"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 import route from "./routes"
 
 const App = () => {
@@ -11,9 +12,26 @@ const App = () => {
         </h1>
       </header>
       <main>
-        {route.map(({ name, path, Component }) => (
-          <Route key={name} path={path} exact component={Component} />
-        ))}
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition key={location.key} timeout={450} classNames="fade">
+                <Switch location={location}>
+                  {route.map(({ name, path, Component }) => (
+                    <Route
+                      key={name}
+                      path={path}
+                      exact
+                      render={props => {
+                        return <Component {...props} />
+                      }}
+                    />
+                  ))}
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
       </main>
     </div>
   )

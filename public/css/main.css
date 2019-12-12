@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: black;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-smoothing: subpixel-antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  max-width: 100rem;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .App {
+    padding: 0 1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  height: 10rem;
+  width: 100%;
+  border-bottom: 3px solid black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header::after {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: -1.2rem;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+header h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  line-height: 1;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+.post-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.post-item__before {
+  width: 4rem;
+  padding-top: 2.3rem;
+}
+
+.post-item__before .circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.post-item__content {
+  width: calc(100% - 4rem);
+}
+
+.post-item__content h2 {
+  font-size: 5.5rem;
+  line-height: 1;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1000px) {
+  .post-item__content h2 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .post-item__content h2 {
+    font-size: 4rem;
+  }
+}
+
+.post-item__content .author {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.post-item__content .date {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.post-item__content .exerp {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.post-item__content .content {
+  margin-top: 1.4rem;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.post-item__content .content div > * {
+  margin-bottom: 1rem;
+}
+
+.post-item__content .content div li {
+  list-style-position: inside;
+}
+
+.comments {
+  margin-left: 4rem;
+}
+
+.comments h3 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.comments-length {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.comment-item {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.comment-item__author {
+  font-weight: bold;
+}
+
+.comment-form {
+  margin-top: 3rem;
+}
+
+.comment-form input {
+  width: 30rem;
+  height: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  display: block;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 500px) {
+  .comment-form input {
+    width: 100%;
+  }
+}
+
+.comment-form input::-webkit-input-placeholder {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+}
+
+.comment-form input:-ms-input-placeholder {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+}
+
+.comment-form input::-ms-input-placeholder {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+}
+
+.comment-form input::placeholder {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+}
+
+.comment-form button {
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding-left: 0.5rem;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 300ms linear 150ms;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 0;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 150ms linear;
+  transition: opacity 150ms linear;
+}
+/*# sourceMappingURL=main.css.map */
