@@ -16,14 +16,18 @@ const CommentAdd = ({ post_id, ids }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    dispatch(addComment(inputName.value, inputComment.value, parseInt(post_id), new_id))
+    dispatch(addComment(inputName.value.toString(), inputComment.value.toString(), parseInt(post_id), new_id))
     inputName.value = ""
     inputComment.value = ""
   }
 
+  const handleChange = () => {
+    inputName.value = inputName.value.replace(/[^A-Za-z0-9]+/g, "")
+  }
+
   return (
     <form onSubmit={handleSubmit} className="comment-form">
-      <input ref={node => (inputName = node)} type="text" id="name" placeholder="Nom" required />
+      <input ref={node => (inputName = node)} type="text" id="name" placeholder="Nom" value={inputName.value} onChange={handleChange} required />
       <input ref={node => (inputComment = node)} type="text" id="comment" placeholder="Commentaire" required />
       <button>Envoyer</button>
     </form>
