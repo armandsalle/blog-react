@@ -29,7 +29,7 @@ export const posts = [
   },
   {
     id: 3,
-    date: "2019-11-01",
+    date: "2019-11-04",
     color: "#D3A959",
     author: "Yvan Desfrites",
     title: "Svelte et le SSR",

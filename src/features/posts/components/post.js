@@ -3,19 +3,20 @@ import { connect } from "react-redux"
 import { Markup } from "interweave"
 
 const Post = ({ data }) => {
-  console.log(data)
   return typeof data !== "undefined" ? (
     <div className="container">
-      <div className="post-item__before">
-        <div className="circle"></div>
-      </div>
-      <div className="post-item__content">
-        <h2>{data.title}</h2>
-        <div className="author">
-          {data.author} <span className="date">{data.date}</span>
+      <div className="post-item">
+        <div className="post-item__before">
+          <div className="circle" style={{ backgroundColor: data.color }}></div>
         </div>
-        <div className="body">
-          <Markup content={data.body} />
+        <div className="post-item__content">
+          <h2>{data.title}</h2>
+          <div className="author">
+            {data.author} <span className="date">{data.date}</span>
+          </div>
+          <div className="content">
+            <Markup content={data.body} />
+          </div>
         </div>
       </div>
     </div>

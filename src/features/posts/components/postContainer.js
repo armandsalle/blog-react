@@ -3,12 +3,16 @@ import PostItem from "./postItem"
 import { connect } from "react-redux"
 
 const PostContainer = ({ data }) => {
-  return (
+  const postSort = data.sort((a, b) => new Date(b.date) - new Date(a.date))
+
+  return typeof data !== "undefined" ? (
     <div className="container">
-      {data.map(item => {
+      {postSort.map(item => {
         return <PostItem item={item} key={item.id} />
       })}
     </div>
+  ) : (
+    <p className="not-exist">Cet article n'existe pas</p>
   )
 }
 

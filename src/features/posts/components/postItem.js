@@ -5,7 +5,7 @@ const PostItem = ({ item }) => {
   return (
     <div className="post-item">
       <div className="post-item__before">
-        <div className="circle"></div>
+        <div className="circle" style={{ backgroundColor: item.color }}></div>
       </div>
       <div className="post-item__content">
         <Link to={"/" + item.id}>
