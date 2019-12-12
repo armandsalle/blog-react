@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { addComment } from "../actions"
 import { useDispatch } from "react-redux"
+import { capitalize } from "../../../shared/utils/capitalize"
 
 const CommentAdd = ({ post_id, ids }) => {
   const dispatch = useDispatch()
@@ -22,7 +23,7 @@ const CommentAdd = ({ post_id, ids }) => {
   }
 
   const handleChange = () => {
-    inputName.value = inputName.value.replace(/[^A-Za-z0-9]+/g, "")
+    inputName.value = capitalize(inputName.value.replace(/([^A-Za-z0-9 ])+/g, ""))
   }
 
   return (

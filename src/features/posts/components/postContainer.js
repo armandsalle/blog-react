@@ -7,6 +7,7 @@ const PostContainer = () => {
   let container = useRef(null)
 
   useEffect(() => {
+    console.log("eee")
     gsap.from([container.children], {
       duration: 1,
       ease: "power3.inOut",
