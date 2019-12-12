@@ -1,8 +1,14 @@
 import React from "react"
-import { connect } from "react-redux"
+import { useSelector } from "react-redux"
 import { Markup } from "interweave"
+import { CommentContainer } from "../../comments"
+import { dateOptions } from "../../../shared/constant/dateOptions"
 
-const Post = ({ data }) => {
+const Post = ({ match }) => {
+  const id = match.params.post_id
+  const { posts } = useSelector(state => state.post)
+
+  const data = posts.find(post => post.id === parseInt(id))
   return typeof data !== "undefined" ? (
     <div className="container">
       <div className="post-item">
@@ -12,24 +18,18 @@ const Post = ({ data }) => {
         <div className="post-item__content">
           <h2>{data.title}</h2>
           <div className="author">
-            {data.author} <span className="date">{data.date}</span>
+            {data.author} <span className="date">le {new Date(data.date).toLocaleDateString("fr-CA", dateOptions)}</span>
           </div>
           <div className="content">
             <Markup content={data.body} />
           </div>
         </div>
       </div>
+      <CommentContainer id={match.params.post_id} />
     </div>
   ) : (
     <p className="not-exist">Cet article n'existe pas</p>
   )
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const id = ownProps.match.params.post_id
-  return {
-    data: state.post.find(post => post.id === parseInt(id))
-  }
-}
-
-export default connect(mapStateToProps)(Post)
+export default Post

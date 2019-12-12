@@ -8,10 +8,6 @@ import App from "./App"
 
 const store = createStore(reducers)
 
-store.subscribe(() => {
-  console.log(store.getState())
-})
-
 ReactDOM.render(
   <Provider store={store}>
     <Router>
