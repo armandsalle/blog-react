@@ -9,6 +9,7 @@ const CommentAdd = ({ post_id, ids }) => {
   let inputName = useRef(null)
   let inputComment = useRef(null)
 
+  //Recupere l'ID le plus grand
   let last_id = Math.max.apply(
     Math,
     ids.map(i => i)
@@ -17,12 +18,14 @@ const CommentAdd = ({ post_id, ids }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
+    //Appel l'action ADD_COMMENT
     dispatch(addComment(inputName.value.toString(), inputComment.value.toString(), parseInt(post_id), new_id))
     inputName.value = ""
     inputComment.value = ""
   }
 
   const handleChange = () => {
+    //Garde que les lettres, chiffres et espaces, puis capitalize la premier lettre de chaque mot
     inputName.value = capitalize(inputName.value.replace(/([^A-Za-z0-9 ])+/g, ""))
   }
 

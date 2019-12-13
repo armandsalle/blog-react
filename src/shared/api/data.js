@@ -8,6 +8,8 @@ export const posts = [
     exerp: `Back to Dinosaur Island shows how intense, involving and rich virtual reality can be. Players will see a powerful dinosaur breathing inches from their face, getting an unprecedented sense of its immense`,
     body: `<p>"Back to Dinosaur Island shows how intense, involving and rich virtual reality can be. Players will see a powerful dinosaur breathing inches from their face, getting an unprecedented sense of its immense scale," says David Bowman, Crytek’s director of production. "To watch this scene in 2D is impressive, but when you're in virtual reality, it becomes more intimate, and more exciting -- giving you a feeling of presence and a belief that you’re really right there in a way that no other medium can."</p>
 
+    <img src="https://picsum.photos/id/119/600/300" width="100%" height="auto" />
+
     <p>Pros :</p>
     <ul>
         <li>Lorem</li>
