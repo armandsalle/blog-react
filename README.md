@@ -1,18 +1,8 @@
 # Blog with ReactJs
 
+❌ This is my first project with React. It has bugs and some bad practices. I will make a V2 ASAP on a second branch to keep my first code always up!
+
 Site en live [ici](https://react-blog-armand.netlify.com/)
-
-Liens utils:
-
-- [A feature based approach to React development](https://ryanlanciaux.com/blog/2017/08/20/a-feature-based-approach-to-react-development)
-- [JSON Placeholder API](https://jsonplaceholder.typicode.com)
-- [Material Ui](https://material-ui.com/)
-
-Features:
-
-- [x] Page listant tous les articles triés par ordre anti-chronologiques
-- [x] Page pour chaque article
-- [x] Module de commentaires pour chaque article
 
 ---
 
